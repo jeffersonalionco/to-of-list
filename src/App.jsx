@@ -12,6 +12,7 @@ function App() {
 
     if (tarefasSalvas) setTarefas(JSON.parse(tarefasSalvas));
     if (tarefasConcluidasSalvas) setTarefasConcluidas(JSON.parse(tarefasConcluidasSalvas));
+    
   }, []);
 
   useEffect(() => {
