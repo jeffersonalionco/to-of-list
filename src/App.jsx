@@ -47,7 +47,7 @@ function App() {
             onChange={(e) => setNovaTarefa(e.target.value)}
             placeholder="Digite o nome de uma tarefa"
           />
-          <button onClick={() => adicionarTarefa(novaTarefa)}>Adicionar</button>
+          <button onClick={() => adicionarTarefa(novaTarefa)}>Adicionar...</button>
         </div>
         <ul>
           {tarefas.map((tarefa) => (
