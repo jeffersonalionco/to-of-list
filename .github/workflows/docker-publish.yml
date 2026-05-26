@@ -30,3 +30,21 @@ jobs:
           push: true # Envia para o registry
           # Mude "seu-usuario" para o seu usuário real abaixo!
           tags: jeffersonalonco/to-do-list:v1
+
+deploy-azure:
+    runs-on: ubuntu-latest
+    needs: build-e-push # Só faz deploy se a imagem foi publicada com sucesso
+
+    steps:
+      # Passo 1: Baixa o código (necessário para a action da Azure)
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # Passo 2: Faz o deploy da imagem do Docker Hub no Azure App Service
+      - name: Deploy no Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          # Troque pelo nome do seu App Service no portal Azure
+          app-name: 'To-do-jefferson'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: 'jeffersonalonco/to-do-list:v1'
