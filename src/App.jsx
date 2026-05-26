@@ -40,7 +40,7 @@ function App() {
     <div className="container">
       <h1 className="title">To-Do List</h1>
       <div className="container1">
-        <h1>TAREFAS A FAZER</h1>
+        <h1>TAREFAS A FAZER ALTERADA</h1>
         <div className="container3">
           <input
             value={novaTarefa}
