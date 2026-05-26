@@ -58,7 +58,7 @@ function App() {
         </ul>
       </div>
       <div className="container2">
-        <h1>Tarefas Completas - Aqui</h1>
+        <h1>Tarefas Completas</h1>
         <ul>
           {tarefasConcluidas.map((tarefa) => (
             <li key={tarefa}>{tarefa}</li>
